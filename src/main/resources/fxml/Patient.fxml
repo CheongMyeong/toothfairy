@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane accessibleText="as" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="877.0" prefWidth="1323.0" style="-fx-background-color: #283B54;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cheongmyeong.toothfairy.controllers.PatientController">
+   <children>
+      <TextField fx:id="firstName" layoutX="297.0" layoutY="103.0" prefHeight="25.0" prefWidth="194.0" />
+      <TextField fx:id="lastName" layoutX="297.0" layoutY="144.0" prefHeight="25.0" prefWidth="194.0" />
+      <Label layoutX="223.0" layoutY="105.0" text="FirstName: " textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="225.0" layoutY="147.0" text="Lastname: " textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="551.0" layoutY="106.0" text="Address: " textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="address" layoutX="615.0" layoutY="102.0" prefHeight="26.0" prefWidth="194.0" />
+      <TextField fx:id="treatment" layoutX="957.0" layoutY="102.0" prefHeight="25.0" prefWidth="200.0" />
+      <Label layoutX="878.0" layoutY="105.0" text="Treatment: " textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="rbMale" layoutX="305.0" layoutY="186.0" mnemonicParsing="false" text="Male" textFill="WHITE">
+         <toggleGroup>
+            <ToggleGroup fx:id="sex" />
+         </toggleGroup></RadioButton>
+      <Label layoutX="258.0" layoutY="185.0" prefHeight="20.0" prefWidth="25.0" text="Sex:" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="rbFemale" layoutX="380.0" layoutY="185.0" mnemonicParsing="false" text="Female" textFill="WHITE" toggleGroup="$sex" />
+      <TextField fx:id="contactNum" layoutX="615.0" layoutY="142.0" prefHeight="26.0" prefWidth="194.0" />
+      <Label layoutX="499.0" layoutY="147.0" text="Contact Number: " textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="892.0" layoutY="146.0" text="Status: " textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="553.0" layoutY="183.0" text="Amount:" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="amount" layoutX="615.0" layoutY="181.0" prefHeight="25.0" prefWidth="194.0" />
+      <Button fx:id="add" layoutX="997.0" layoutY="178.0" mnemonicParsing="false" onAction="#add" prefHeight="36.0" prefWidth="121.0" style="-fx-background-color: #426892; -fx-border-color: white;" text="ADD" textFill="WHITE" />
+      <Label layoutX="445.0" layoutY="14.0" prefHeight="36.0" prefWidth="391.0" text="PATIENT INFORMATION" textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <TableView fx:id="patientTable" layoutX="41.0" layoutY="223.0" prefHeight="528.0" prefWidth="1266.0">
+        <columns>
+          <TableColumn fx:id="colPatientId" minWidth="50.0" prefWidth="100.0" text="ID" />
+          <TableColumn fx:id="colFirstName" prefWidth="125.0" text="First Name" />
+            <TableColumn fx:id="colLastName" prefWidth="125.0" text="Last Name" />
+            <TableColumn fx:id="colSex" prefWidth="83.0" text="Sex" />
+            <TableColumn fx:id="colAddress" prefWidth="142.0" text="Address" />
+            <TableColumn fx:id="colContactNum" prefWidth="116.0" text="Contact Number" />
+            <TableColumn fx:id="colStatus" prefWidth="145.0" text="Status" />
+            <TableColumn fx:id="colAmount" prefWidth="136.0" text="Amount" />
+            <TableColumn fx:id="colTreatment" prefWidth="192.0" text="Treatment" />
+            <TableColumn fx:id="colEdit" minWidth="50.0" prefWidth="100.0" text="Edit" />
+        </columns>
+      </TableView>
+      <Button fx:id="delete" layoutX="362.0" layoutY="772.0" mnemonicParsing="false" onAction="#delete" prefHeight="36.0" prefWidth="121.0" style="-fx-background-color: #426892; -fx-border-color: white;" text="DELETE" textFill="WHITE" />
+      <Button fx:id="reset" layoutX="727.0" layoutY="772.0" mnemonicParsing="false" onAction="#reset" prefHeight="36.0" prefWidth="121.0" style="-fx-background-color: #426892; -fx-border-color: white;" text="RESET" textFill="WHITE" />
+      <RadioButton fx:id="rbWalkin" layoutX="957.0" layoutY="148.0" mnemonicParsing="false" text="Walk-in" textFill="WHITE">
+         <toggleGroup>
+            <ToggleGroup fx:id="status" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="rbByApp" layoutX="1032.0" layoutY="147.0" mnemonicParsing="false" text="By Appointment" textFill="WHITE" toggleGroup="$status" />
+      <Label layoutX="158.0" layoutY="66.0" prefHeight="36.0" prefWidth="132.0" text="Patient ID -" textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="patientId" layoutX="184.0" layoutY="74.0" prefHeight="26.0" prefWidth="34.0" textFill="WHITE" />
+      <ImageView fx:id="home" fitHeight="187.0" fitWidth="170.0" layoutX="-12.0" layoutY="-43.0" onMouseClicked="#home" pickOnBounds="true">
+         <image>
+            <Image url="@../images/icon2.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
